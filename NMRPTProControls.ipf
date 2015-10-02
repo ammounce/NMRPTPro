@@ -96,7 +96,12 @@ Function IsotopeSelect(ctrlName) : ButtonControl
 	
 	v_value+=isotope
 
-	pt.ggyro=str2num(pt.nmrperiodictabledata[v_value][4])
+
+	if(strsearch(pt.nmrperiodictabledata[v_value][4], "-",0)==0)
+		return 0
+	else
+		pt.ggyro=str2num(pt.nmrperiodictabledata[v_value][4])
+	endif
 	
 	if(strsearch(pt.nmrperiodictabledata[v_value][3], "/",0)>=0)
 		pt.spin=str2num(removeending(pt.nmrperiodictabledata[v_value][3],"/2"))/2
