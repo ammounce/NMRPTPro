@@ -11,13 +11,10 @@ Structure PT
 	NVAR K, gK, ggyro
 	
 	NVAR H0, w0, sys2i, dfi
-	
-	NVAR senseH, SenseW
-	
+		
 	string panel
 	
-	wave isonumber	, spinwave, gyrowave, quadmomwave, abundancewave, sensewave, shiftwave, T1Twave
-	wave/t nucleusnamewave
+	wave/t NMRPeriodicTabledata
 ENdstructure
 
 Function InitPt(s)
@@ -46,19 +43,8 @@ Function InitPt(s)
 	NVAR s.sys2I=root:NMRPtPro:sys2I
 	NVAR s.DFI=root:NMRPtPro:DFI
 
-	NVAR s.Sensew=root:NMRPtPro:Sensew
-	NVAR s.Senseh=root:NMRPtPro:Senseh
-
 	s.panel="NMRPeriodicTable"
 	
-	wave s.isonumber=root:NMRPtPro:isotopenumber
-	wave s.spinwave=root:NMRPtPro:Nuclearspin
-	wave s.gyrowave=root:NMRPtPro:NuclearGyro
-	wave s.quadmomwave=root:NMRPtPro:quadmomentwave
-	wave s.abundancewave=root:NMRPtPro:abundancewave
-	wave s.sensewave=root:NMRPtPro:sensewave
-	wave s.shiftwave=root:NMRPtPro:shiftwave
-	wave s.T1Twave=root:NMRPtPro:T1Twave
+	wave/t s.NMRperiodictabledata=root:NMRPTPro:NMRPeriodcTableData
 
-	wave/t s.nucleusnamewave=root:NMRPtPro:nucleusnamewave
 End
