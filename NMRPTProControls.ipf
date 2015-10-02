@@ -71,15 +71,21 @@ Function ElementSelect(ctrlname):ButtonControl
 
 	buttontitle="\\JR\\M\\Z30\\K(0,0,0)" +num2str(pt.atomicnumber)+ "\r"
 	buttontitle+="\\M\\Z21\\K(0,0,0) Spin\r"
-	buttontitle+="\F'Symbol'g\F'Arial'\r"
-	buttontitle+="Q\r"
-	buttontitle+="a\r"
-	buttontitle+="sensit.\r"
-	buttontitle+="K\r"
-	buttontitle+="T\B1\M \Z21 T"
+	buttontitle+="\F'Symbol'g/2p\F'Arial'(MHz/T)\r"
+	buttontitle+="Q (barns)\r"
 	
-	TitleBox parameters, pos={285-50*(isotopes-1), 35}, size={90,225}, frame=0
+	string buttontitle2=""
+	
+	buttontitle2+="\JR\Z19N. A.\r"
+	buttontitle2+="Sens.\r"
+	buttontitle2+="K (%)\r"
+	buttontitle2+="T\B1\M\Z21T(sK)"
+	
+	TitleBox parameters, pos={225-50*(isotopes-1), 30}, size={90,225}, frame=0
 	Titlebox parameters, title=buttontitle
+
+	TitleBox parameters2, pos={260-50*(isotopes-1), 145}, size={90, 225}, frame=0
+	titlebox parameters2, title=buttontitle2
 
 End
 
