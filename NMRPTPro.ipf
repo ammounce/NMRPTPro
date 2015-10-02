@@ -206,7 +206,7 @@ Function NMRPTPro_Master()
 	Button calcw0, pos={785, 55}, size={20,20}, proc=CalcHwKGI, title=""
 	SetVariable setvarK, pos={630,85}, value=root:NMRPtPro:gK, size={150,15},fSize=14, title="K(%)"
 	Button calcK, pos={785, 85}, size={20,20}, proc=CalcHwKGI, title=""
-	SetVariable setvargyro, pos={600,115}, value=root:NMRPtPro:ggyro, size={180,15},fSize=14, title="\F'Symbol'g\F'Arial' (MHz/T)"
+	SetVariable setvargyro, pos={600,115}, value=root:NMRPtPro:ggyro, size={180,15},fSize=14, title="\F'Symbol'g/2p\F'Arial' (MHz/T)"
 	SetVariable setvarSYS2I, pos={815,40}, value=root:NMRPtPro:sys2I, size={180,15},fSize=14, title="Sys2 I (A)", proc=setvarHI
 	SetVariable setvarDFI pos={815,70}, value=root:NMRPtPro:DFI, size={180,15},fSize=14, title="Dil F (A)", proc=setvarHI
 

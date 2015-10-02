@@ -130,12 +130,14 @@ Function CalcHwKGI(ctrlName): ButtonControl
 	STRUCT pt pt; initpt(pt)
 
 	if(samestring(ctrlname, "calcH0")==1)
-		pt.H0=pt.w0/pt.ggyro/(1-pt.gK/100)
-		print pt.gK, pt.w0, pt.ggyro
+		pt.H0=pt.w0/pt.ggyro/(1+pt.gK/100)
+
 		pt.sys2I=pt.H0/.11425
 		pt.DFI=pt.H0/.12037
+		
 	elseif(samestring(ctrlname,"calcw0")==1)
 		pt.w0=pt.ggyro*pt.H0*(1+pt.gK/100)
+		
 	elseif(samestring(ctrlname, "calcK")==1)
 		pt.gK=100*(pt.w0/pt.ggyro/pt.H0-1)		
 	endif	
@@ -154,12 +156,15 @@ Function SetVarHI(ctrlName,varNum,varStr,varName) : SetVariableControl
 	if(samestring(varname,"H0")==1)
 		pt.sys2i=pt.h0/.11425
 		pt.DFI=pt.h0/.12037
+		
 	elseif(samestring(varname, "sys2I")==1)
 		pt.H0=pt.sys2I*.11425
 		pt.DFI=pt.sys2I*.12037/.11425
+		
 	elseif(samestring(varname, "DFI")==1)
 		pt.H0=pt.DFI*.12037
 		pt.sys2I=pt.dfi*.11425/.12037
+		
 	endif
 	
 	
